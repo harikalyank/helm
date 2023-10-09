@@ -11,7 +11,7 @@ on:
   # Allows you to run this workflow manually from the Actions tab test
   workflow_dispatch:
     inputs:
-      terraform_apply:
+      stages:
         default: "approve"
       
 
@@ -39,4 +39,4 @@ jobs:
         run: |
           echo terraform apply
          
-        if: ${{ github.events.terraform_apply == 'approve' }}
+        if: ${{ github.events.stages == 'approve' }}
