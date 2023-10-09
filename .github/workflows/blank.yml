@@ -39,4 +39,4 @@ jobs:
         run: |
           #echo terraform apply
          
-          echo  ${{ github.events.inputs.stages  }}
+          echo  ${{ github.event.inputs.stages }}
