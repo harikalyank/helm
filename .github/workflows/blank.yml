@@ -11,7 +11,7 @@ on:
   # Allows you to run this workflow manually from the Actions tab test
   workflow_dispatch:
     inputs:
-      stages:
+      terraform_apply:
         default: "approve"
       
 
