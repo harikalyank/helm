@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
     inputs:
       stages:
-        default: "approve"
+        default: 'approve'
       
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -37,6 +37,6 @@ jobs:
           echo terraform plan
       - name: terraform apply
         run: |
-          echo terraform apply
+          #echo terraform apply
          
-        if: ${{ github.events.inputs.stages == 'approve' }}
+          echo  ${{ github.events.inputs.stages  }}
