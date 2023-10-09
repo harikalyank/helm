@@ -39,4 +39,4 @@ jobs:
         run: |
           echo terraform apply
          
-        if: ${{ github.events.stages == 'approve' }}
+        if: ${{ github.events.terraform_apply == 'approve' }}
