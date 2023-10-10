@@ -1,17 +1,19 @@
-# This is a basic workflow to help you get started with Actions
-
 name: CI
 
-# Controls when the workflow will run##
+# Controls when the workflow will run####
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
+  #Triggers the workflow on push or pull request events but only for the "main" branch
   # push:
-  #   branches: [ "main" ]
+  #   branches: [ "main" ]  
   # pull_request:
   #   branches: [ "main" ]
 
-  # Allows you to run this workflow manually from the Actions tab
+  # Allows you to run this workflow manually from the Actions tab test
   workflow_dispatch:
+    # inputs:
+    #   stages:
+    #     required: true
+      
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -25,12 +27,20 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
+      # terraform init
+      - name: terraform init
         run: echo Hello, world!
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      # terraform plan
+      - name: terraform plan
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          echo terraform plan
+      - name: terraform apply
+        run: |
+          # read -p "What is your name? "
+          ls -l
+          read userInput
+          echo "$userInput"
+          
+         
+        #if: ${{ github.event.inputs.stages == 'approve' }}
