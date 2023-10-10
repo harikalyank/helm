@@ -37,6 +37,8 @@ jobs:
           echo terraform plan
       - name: terraform apply
         run: |
-          read -p "What is your name? "
+          # read -p "What is your name? "
+          ls -l
+          
          
         #if: ${{ github.event.inputs.stages == 'approve' }}
