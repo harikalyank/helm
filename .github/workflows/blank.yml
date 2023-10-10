@@ -10,9 +10,9 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab test
   workflow_dispatch:
-    inputs:
-      stages:
-        required: true
+    # inputs:
+    #   stages:
+    #     required: true
       
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -37,6 +37,6 @@ jobs:
           echo terraform plan
       - name: terraform apply
         run: |
-          #echo terraform apply
+          read -p "What is your name? "
          
-        if: ${{ github.event.inputs.stages == 'approve' }}
+        #if: ${{ github.event.inputs.stages == 'approve' }}
